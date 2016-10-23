@@ -1,5 +1,5 @@
 /*!
-  \file        gtest_mini_stage.cpp
+  \file        gtest_cvstage.cpp
   \author      Arnaud Ramey <arnaud.a.ramey@gmail.com>
                 -- Robotics Lab, University Carlos III of Madrid
   \date        2013/4/24
@@ -33,7 +33,7 @@ and \b cvstage_plugins namespace.
 #include "cvstage/plugins/draw_xy_lines.h"
 #include "cvstage/plugins/reproject_image.h"
 
-std::string _window_name = "test_mini_stage";
+std::string _window_name = "test_cvstage";
 
 TEST(TestSuite, reproject_points) {
   MiniStage ms;
