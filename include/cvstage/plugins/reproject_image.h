@@ -29,6 +29,7 @@ Some plugins to draw more stuff with a MiniStage.
 
 #include "cvstage/cvstage.h"
 #include "image_geometry/pinhole_camera_model.h"
+#include <stdio.h>
 
 namespace cvstage_plugins {
 
