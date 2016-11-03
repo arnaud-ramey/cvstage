@@ -148,7 +148,7 @@ void test_brownian_motion() {
     ms.draw_axes();
     cvstage_plugins::plot_xy_lines(ms, object_center_hist, CV_RGB(255, 0, 0), 2);
     //ms.world2pixel(object_center_hist, object_center_hist_pixels);
-    //image_utils::drawPolygon(ms.get_viz(), object_center_hist_pixels, false,
+    //vision_utils::drawPolygon(ms.get_viz(), object_center_hist_pixels, false,
     //                         CV_RGB(255, 0, 0), 2);
     cv::circle(ms.get_viz(), ms.world2pixel(object_center), 4, CV_RGB(0, 0, 0), -1);
     cv::putText(ms.get_viz(), "space to switch heading", cv::Point(10, 20),
@@ -174,7 +174,7 @@ static inline void test_costmap_mouse_cb(int event, int x, int y, int , void* pa
   //cv::Point2f pt_world = ms_ptr->pixel2world(x, y);
   bool was_map_changed = false;
   if (event == CV_EVENT_LBUTTONDOWN) {
-    //costmap_utils::add_point_to_costmap(pt_world, test_costmap_map);
+    //vision_utils::add_point_to_costmap(pt_world, test_costmap_map);
     was_map_changed = true;
   }
   else if (event == CV_EVENT_MBUTTONDOWN) {
@@ -212,7 +212,7 @@ void test_costmap() {
 void test_reproject_image(const std::string & kinect_serial_number) {
   // get camera model
   image_geometry::PinholeCameraModel depth_camera_model, rgb_camera_model;
-  kinect_openni_utils::read_camera_model_files
+  vision_utils::read_camera_model_files
       (kinect_serial_number, depth_camera_model, rgb_camera_model);
 
   // read depth and rgb files

@@ -93,12 +93,12 @@ inline cv::Point3d pixel2world_depth
   if (cvstage_plugins::is_nan_depth(depth_value))
     return cv::Point3d(NAN_DOUBLE, NAN_DOUBLE, NAN_DOUBLE);
   cv::Point3d line_vec = depth_cam_model.projectPixelTo3dRay(depth_pt);
-  // double line_vec_norm = geometry_utils::norm(line_vec);
+  // double line_vec_norm = vision_utils::norm(line_vec);
   //  if (fabs(line_vec_norm) < 1E-5)
   //    return cv::Point3d(0, 0, 0);
   //    printf("depth_pt%s, line_vec:%s, line_vec_norm:%g",
-  //             geometry_utils::printP2(depth_pt).c_str(),
-  //             geometry_utils::printP(line_vec).c_str(),
+  //             vision_utils::printP2(depth_pt).c_str(),
+  //             vision_utils::printP(line_vec).c_str(),
   //             line_vec_norm);
   // return line_vec * (depth_value / line_vec_norm);
 
@@ -199,7 +199,7 @@ inline bool pixel2world_rgb_color255
           ( pixel2world_depth<Pt3>
             (cv::Point2d(col + offset.x, row + offset.y),
              depth_cam_model, depth_ptr[col]) );
-      //colors.push_back(color_utils::uchar_bgr_color_to_ros_rgba_color(bgr_data[col][0], bgr_data[col][1], bgr_data[col][2]));
+      //colors.push_back(vision_utils::uchar_bgr_color_to_ros_rgba_color(bgr_data[col][0], bgr_data[col][1], bgr_data[col][2]));
       colors.push_back(Color255(bgr_data[col][0], bgr_data[col][1], bgr_data[col][2]));
     } // end loop col
   } // end loop row

@@ -288,7 +288,7 @@ public:
       _mouse_original_scale = _PIXEL2METER;
     if (_mouse_is_mbutton_dragged) {
       double new_scale = (1 + (y - _mouse_drag_begin_y) / 100.f) * _mouse_original_scale;
-      // maggiePrint("new_scale:%g", new_scale);
+      // ROS_WARN("new_scale:%g", new_scale);
       if (new_scale >= 0)
         set_scale(new_scale);
     }

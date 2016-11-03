@@ -90,7 +90,7 @@ void draw_costmap(MiniStage & ms,
   for (unsigned int cell_idx = 0; cell_idx < map.cells.size(); ++cell_idx) {
     for (unsigned int corner_idx = 0; corner_idx < 4; ++corner_idx)
       one_cell_polygon[corner_idx] = ms.world2pixel(map_to_corners[4 * cell_idx + corner_idx]);
-    // image_utils::drawPolygon(ms.get_viz(), polygon, true, CV_RGB(0, 0, 255), 3);
+    // vision_utils::drawPolygon(ms.get_viz(), polygon, true, CV_RGB(0, 0, 255), 3);
     polygons.push_back(one_cell_polygon);
   } // end for (cell_idx)
   // draw polygons
