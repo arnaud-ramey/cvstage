@@ -238,7 +238,7 @@ TEST(TestSuite, reproject_image) {
   // read depth and rgb files
   cv::Mat rgb, depth;
   vision_utils::read_rgb_depth_user_image_from_image_file
-      (IMG_DIR "depth/juggling1", &rgb, &depth, NULL);
+      (vision_utils::IMG_DIR() +  "depth/juggling1", &rgb, &depth, NULL);
 
   MiniStage ms;
   std::vector<cv::Point3f> depth_reprojected;

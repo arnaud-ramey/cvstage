@@ -216,9 +216,9 @@ void test_reproject_image(const std::string & kinect_serial_number) {
       (kinect_serial_number, depth_camera_model, rgb_camera_model);
 
   // read depth and rgb files
-  cv::Mat3b rgb_img = cv::imread(std::string(IMG_DIR) + "sample_rgb.jpg",
+  cv::Mat3b rgb_img = cv::imread(std::string(vision_utils::IMG_DIR() + ) + "sample_rgb.jpg",
                                  CV_LOAD_IMAGE_COLOR);
-  cv::Mat1f depth_img = cv::imread(std::string(IMG_DIR) + "sample_depth.pgm",
+  cv::Mat1f depth_img = cv::imread(std::string(vision_utils::IMG_DIR() + ) + "sample_depth.pgm",
                                    CV_LOAD_IMAGE_UNCHANGED);
 
   MiniStage ms;
