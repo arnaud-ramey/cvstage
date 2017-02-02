@@ -7,8 +7,7 @@ A tiny implementation of the popular "stage" in OpenCV for ROS.
 Licence
 =======
 
-BSD
-
+LGPLv3
 
 Authors
 =======
